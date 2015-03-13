@@ -11,9 +11,11 @@ public class ACM_Q5_SRM_646_div2_250 {
        int n=in.nextInt();
        int arr[]=new int[n];
        int k=in.nextInt();
+       
        for(int i=0;i<n;i++) arr[i]=in.nextInt();
        Arrays.sort(arr);
-     //  for(int i=0;i<n;i++)System.out.print(arr[i]+" ");
+       System.out.println(find(arr,k));
+       //  for(int i=0;i<n;i++)System.out.print(arr[i]+" ");
      
        int min=Integer.MAX_VALUE;
        if(k==1) System.out.println("0");
@@ -29,4 +31,21 @@ public class ACM_Q5_SRM_646_div2_250 {
    //    System.out.println(min);
 	}
 	}
+ static public int find(int[] numbers, int k){
+     Arrays.sort(numbers);
+   //  for(int i=0;i<n;i++)System.out.print(arr[i]+" ");
+   
+     int min=Integer.MAX_VALUE;
+     if(k==1) return 0;
+     else {
+     for(int i=0;i<numbers.length;i++){
+  	   for(int j=i+1;j<numbers.length;j++){
+  
+  		   min=Math.min(min,(Math.abs(numbers[i]-numbers[j])-1));
+  		  
+  	   }
+     }
+	}
+	return min;
+ }
 }

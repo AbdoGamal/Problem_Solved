@@ -1,4 +1,4 @@
-package A;
+package codeforce;
 
 //problem tags
 //greedy && shortest paths

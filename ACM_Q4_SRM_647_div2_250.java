@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ACM_Q4_SRM_647_div2_250 {
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		Scanner in=new Scanner(System.in);
 		int n=in.nextInt();
 		int arr[]=new int[n];
@@ -50,7 +50,8 @@ public class ACM_Q4_SRM_647_div2_250 {
 		//System.out.println("sum "+sum);
 		if(sum>=mx||Math.abs(sum-mx)==1) System.out.println("possible");
 		else System.out.println("impossible");
-		}
+		
+		}*/
 	
 	
 	static public int max(int arr[]){
@@ -61,4 +62,50 @@ public class ACM_Q4_SRM_647_div2_250 {
 		//System.out.println(max);
 		return max;
 	}
+	
+static public String makeLine(int[] x){
+    int i=0,j=0;
+	int fr[]=new int[x.length];
+	int p=0;
+	int s=0;
+	int t=0;
+	Arrays.sort(x);
+	while(i<x.length)
+	{
+//	System.out.println(" "+i);
+	for(j=i;j<x.length;j++)
+	{//System.out.println("arr "+arr[i]);
+	if(x[i]==x[j]){
+	 fr[t]++;
+	}
+	
+	else{
+		s=0;
+		t++;
+		break;
+	}
+	}
+	//System.out.println("j "+j+"i "+i);
+	i=0;
+	i+=j;
+	//System.out.println("j "+j+"i "+i);
+	}
+	int mx=max(fr);
+	//System.out.println("max  "+mx);
+ int sum=0;
+for(int i1=0;i1<fr.length;i1++){
+	//System.out.println("frequancy "+fr[i1]);
+	sum+=fr[i1];
+    }
+
+   sum-=mx;
+   String imp="impossible";
+   String po="possible";
+	//System.out.println("sum "+sum);
+	if(sum>=mx||Math.abs(sum-mx)==1) return po;
+	else return imp;
+	
+		
+	}
+	
 }
